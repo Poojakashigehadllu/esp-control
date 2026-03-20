@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ESP Control</title>
+</head>
+<body style="text-align:center; margin-top:100px;">
+
+  <h1>ESP8266 LED Control</h1>
+
+  <button onclick="toggleLED()" style="padding:20px; font-size:20px;">
+    Toggle LED
+  </button>
+
+  <script>
+    let state = 0;
+
+    function toggleLED() {
+      state = !state;
+
+      if(state) {
+        fetch("https://YOUR_NGROK_LINK/on");
+      } else {
+        fetch("https://YOUR_NGROK_LINK/off");
+      }
+    }
+  </script>
+
+</body>
+</html>
